@@ -19,10 +19,10 @@ import java.util.List;
 
 public class SparkDemoSumAListOfNumbers {
   public static void main(String[] args) {
-    // STEP 1: create a SparkConf object
+    // STEP 1: create a SparkConf object (configuration of the Spark application)
     SparkConf conf = new SparkConf().setAppName("SparkDemo") ;
 
-    // STEP 2: create a Java Spark context
+    // STEP 2: create a Java Spark context (connection to a Spark cluster)
     JavaSparkContext sparkContext = new JavaSparkContext(conf) ;
 
     // An array of Integer objects

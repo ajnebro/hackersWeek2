@@ -13,8 +13,7 @@ import scala.Tuple2;
 import java.util.Arrays;
 
 /**
- * Example showing how to read data from files. The applications sum a list of integer values.
- * Each data file must contain an integer per line.
+ * Example showing how to count the most used words in files containing tweets
  *
  * @author Antonio J. Nebro <antonio@lcc.uma.es>
  */
