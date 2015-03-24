@@ -3,7 +3,6 @@ package es.uma.hackersweek.sparkdemo;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.Function2;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,11 +34,7 @@ public class SparkDemoSumAListOfNumbers {
     JavaRDD<Integer> distributedData = sparkContext.parallelize(data);
 
     // STEP 4: compute the sum
-    int sum = distributedData.reduce(new Function2<Integer, Integer, Integer>() {
-      @Override public Integer call(Integer integer, Integer integer2) throws Exception {
-        return integer+integer2;
-      }
-    }) ;
+    int sum = distributedData.reduce((integer, integer2) -> integer+integer2) ;
 
     // STEP 5: print the result
     System.out.println("The sum is: " + sum) ;
